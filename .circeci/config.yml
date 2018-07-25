@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: erlang
+    steps:
+      - checkout
+      - run: rebar3 ct --name ct@127.0.0.1
