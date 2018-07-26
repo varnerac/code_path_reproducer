@@ -16,7 +16,7 @@ remote_test(_Config) ->
                                          {application, ensure_all_started, [code_path_reproducer]}]}]),
     ct:print("\e[32m Node ~p [OK] \e[0m", [HostNode]),
     timer:sleep(3000),
-    net_kernel:connect(RemoteNode),
+    net_kernel:connect_node(RemoteNode),
     true = rpc:call(RemoteNode, code_path_producer, hello_word, []),
     {ok, _} = ct_slave:stop(RemoteNode),
     ok.
