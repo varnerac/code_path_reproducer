@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: erlang
+      - image: tsloughter/erlang-alpine:20.0.1
     steps:
       - checkout
       - run: rebar3 ct --name ct@127.0.0.1
